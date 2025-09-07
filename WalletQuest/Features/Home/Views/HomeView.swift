@@ -26,6 +26,16 @@ struct HomeView: View {
                 .buttonStyle(.borderedProminent)
                 .padding(.top, 16)
 
+                NavigationLink(destination: BudgetView()) {
+                    Label("Budget", systemImage: "chart.pie.fill")
+                }
+                .buttonStyle(.bordered)
+
+                NavigationLink(destination: QuestsListView()) {
+                    Label("Quests", systemImage: "flag.checkered")
+                }
+                .buttonStyle(.bordered)
+
                 NavigationLink(destination: CategoriesListView()) {
                     Label("Manage Categories", systemImage: "tag")
                 }
