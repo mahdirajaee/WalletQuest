@@ -16,8 +16,14 @@ struct OnboardingAuthView: View {
             } onCompletion: { _ in }
             .signInWithAppleButtonStyle(.black)
             .frame(height: 48)
+            .accessibilityIdentifier("btn_signin_apple")
 
             Button("Use email instead") { vm.next() }
+                .accessibilityIdentifier("btn_use_email")
+
+            Button("Continue without account") { vm.next() }
+                .buttonStyle(.bordered)
+                .accessibilityIdentifier("btn_continue_without_account")
         }
         .padding()
     }
@@ -26,4 +32,3 @@ struct OnboardingAuthView: View {
 #Preview {
     OnboardingAuthView(vm: OnboardingViewModel())
 }
-

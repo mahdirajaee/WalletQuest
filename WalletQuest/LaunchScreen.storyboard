@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ViewController">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VC">
     <scenes>
         <!--Launch Screen-->
         <scene sceneID="scene">
             <objects>
-                <viewController id="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="View" userLabel="LaunchView">
+                <viewController id="VC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="View">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -16,6 +16,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Label" firstAttribute="centerX" secondItem="View" secondAttribute="centerX" id="cX"/>
+                            <constraint firstItem="Label" firstAttribute="centerY" secondItem="View" secondAttribute="centerY" id="cY"/>
+                        </constraints>
                         <color key="backgroundColor" red="0.09" green="0.10" blue="0.12" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>

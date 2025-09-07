@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDCategory" representedClassName="CDCategory" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="icon" attributeType="String"/>
+        <attribute name="isCustom" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDBudget" representedClassName="CDBudget" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="month" attributeType="String"/>
+        <attribute name="categoryId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="capAmount" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rolloverEnabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="rolloverAmount" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDQuest" representedClassName="CDQuest" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="desc" attributeType="String" optional="YES"/>
+        <attribute name="targetMetric" attributeType="String"/>
+        <attribute name="targetValue" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rewardXP" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rewardCoins" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="premiumOnly" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDQuestProgress" representedClassName="CDQuestProgress" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="questId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startDate" attributeType="Date"/>
+        <attribute name="status" attributeType="String"/>
+        <attribute name="progressValue" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDTransaction" representedClassName="CDTransaction" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="date" attributeType="Date"/>
+        <attribute name="amount" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="merchant" attributeType="String"/>
+        <attribute name="categoryId" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notes" attributeType="String" optional="YES"/>
+        <attribute name="isRecurring" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isExcluded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="source" attributeType="String"/>
+        <attribute name="externalTxId" attributeType="String" optional="YES"/>
+        <attribute name="txHash" attributeType="String"/>
+    </entity>
+</model>

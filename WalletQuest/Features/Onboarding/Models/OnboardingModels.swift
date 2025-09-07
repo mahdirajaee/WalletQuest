@@ -4,6 +4,10 @@ enum OnboardingStep: Int, Codable {
     case welcome
     case auth
     case goals
+    case starterBudget
+    case pickCategories
+    case firstQuest
+    case teaser
     case completed
 }
 
@@ -22,4 +26,3 @@ enum OnboardingConstants {
         .init(id: "other", title: "Other goal")
     ]
 }
-

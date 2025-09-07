@@ -25,6 +25,7 @@ struct OnboardingGoalsView: View {
             Button("Continue") { vm.next() }
                 .buttonStyle(.borderedProminent)
                 .disabled(vm.selectedGoals.isEmpty)
+                .accessibilityIdentifier("btn_goals_continue")
         }
         .padding()
     }
@@ -33,4 +34,3 @@ struct OnboardingGoalsView: View {
 #Preview {
     OnboardingGoalsView(vm: OnboardingViewModel())
 }
-

@@ -11,6 +11,7 @@ struct OnboardingWelcomeView: View {
 
             Button("Get started") { vm.next() }
                 .buttonStyle(.borderedProminent)
+                .accessibilityIdentifier("btn_get_started")
         }
         .padding()
     }

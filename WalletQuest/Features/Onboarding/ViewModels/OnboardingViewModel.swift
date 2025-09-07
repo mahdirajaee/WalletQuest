@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 final class OnboardingViewModel: ObservableObject {
     @Published var step: OnboardingStep
@@ -16,7 +17,11 @@ final class OnboardingViewModel: ObservableObject {
         switch step {
         case .welcome: step = .auth
         case .auth: step = .goals
-        case .goals: step = .completed
+        case .goals: step = .starterBudget
+        case .starterBudget: step = .pickCategories
+        case .pickCategories: step = .firstQuest
+        case .firstQuest: step = .teaser
+        case .teaser: step = .completed
         case .completed: break
         }
         persist()
@@ -27,7 +32,11 @@ final class OnboardingViewModel: ObservableObject {
         case .welcome: break
         case .auth: step = .welcome
         case .goals: step = .auth
-        case .completed: step = .goals
+        case .starterBudget: step = .goals
+        case .pickCategories: step = .starterBudget
+        case .firstQuest: step = .pickCategories
+        case .teaser: step = .firstQuest
+        case .completed: step = .teaser
         }
         persist()
     }
@@ -40,6 +49,14 @@ final class OnboardingViewModel: ObservableObject {
     func persist() {
         storage.saveStep(step)
     }
+
+    // MARK: - Steps & Analytics helpers
+    private var orderedSteps: [OnboardingStep] {
+        [.welcome, .auth, .goals, .starterBudget, .pickCategories, .firstQuest, .teaser]
+    }
+
+    var currentIndex: Int { orderedSteps.firstIndex(of: step) ?? 0 }
+    var totalSteps: Int { orderedSteps.count }
 }
 
 struct OnboardingStorage {
@@ -69,4 +86,3 @@ struct OnboardingStorage {
         )
     }
 }
-
